@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe/St</title>
+
+
+    <!-- Skeleton CSS framework -->
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <!-- Our own CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Leaflet Map API-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+    <!--Ajax-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!--Getting the crime categories-->
+    <script src="js/categories.js"></script>
+</head>
+<body>
+    
+
+    <div class="table-container"> <!-- footer fixing div 1 -->
+        <div class="table-block footer-push"> <!-- footer fixing div 2 -->
+
+            <!-- Title & Navbar -->
+            
+            <header>
+                    <div class="container" style="margin-top: 15px;" >
+
+                        <!-- columns should be the immediate child of a .row -->
+                        <div class="row">
+                        <div class="four columns"><h1 class="page-title" >Safe/St</h1></div>
+                        <a href="/home" class="two columns navigation navitems" id="selected-page">Home</a>
+                        <a href="/ratings" class="two columns navigation navitems">Ratings</a>
+                        <!-- <a href="#" class="two columns navigation navitems">About</a> -->
+                        <a href="/login" class="two columns navigation navitems">Login</a>
+                        <a href="/myCities" class="two columns navigation navitems">My Cities</a>
+                        </div>
+                    
+                    </div>
+
+            </header>
+
+            <!-- Page Content -->
+
+            <main>
+            
+                <div class="container">
+
+                    <!-- Welcome and Description -->
+                    <div class="image">
+                        <div class="row"> <br> <h5>Welcome to Safe/St!</h5></div>
+                        <div class="row">
+                            <p class="five columns">In our map tool you can find the latest crimes committed in your area if you live in England, Wales or Northern Ireland. The data you will find on this page is from the UK Police, which means you can also search historical data, and choose the category of the incidents you're interested in.</p>
+                        </div>
+                    </div>
+
+                    <!-- Section Title -->
+                    <div class="row">
+                        <div class="five columns divider"></div>
+                        <div class="two columns section-title"><h4>Search</h4></div>
+                        <div class="five columns divider"></div>
+                    </div>
+
+                    <!-- Form -->
+                    <div class="row">
+                        <div class="four columns form-elements">
+                            <label for="longitude">Longitude</label>
+                            <input class="u-full-width" type="number" placeholder="12.345678" id="longitude">
+                        </div>
+                        <div class="four columns form-elements">
+                            <label for="latitude">Latitude</label>
+                            <input class="u-full-width" type="number" placeholder="12.345678" id="latitude">
+                        </div>
+                        <div class="four columns form-elements inline-button" >
+                            <input class="button" id="getLocation" type="submit" value="Get Coordinates">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        
+                        <div class="four columns form-elements">
+                            <label for="date">Date <span id="lastUpdate"> Last updated:</span></label>
+                            <input class="u-full-width" type="date" id="date">
+                        </div>
+                        <div class="eight columns form-elements">
+                            <label for="category">Type of incident</label>
+                            <select class="u-full-width" id="category"></select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="twelve columns form-elements-button" style="text-align: center;">
+                            <input class="button-primary" id="search" type="submit" value="Search">
+                        </div>
+                    </div>
+
+                    
+
+                    <!-- Map -->
+                    <div class="row" style="margin-top: 40px;">
+                    <div id="mapid"></div>
+                    
+                    </div>
+                
+                </div>
+                <script src="js/indexScript.js"></script>
+            </main>
+
+        </div> <!-- end footer fixing div 2 -->
+
+        <div class="table-block"> <!-- footer fixing div 3 -->
+
+            <!-- Footer-->
+
+            <footer>
+
+                <div class="container">
+
+                    <!-- columns should be the immediate child of a .row -->
+                    <div class="row">
+                        <div class="one-third column">
+                            <p> <b>Contact us</b> <br> safest@mail.com <br> 01234 567 89 0 </p>
+                        </div>
+                        <div class="one-third column">
+                            <p> © 2021 <br> www.safest.co.uk <br> All rights reserved. </p>
+                        </div>
+                        <div class="one-third column">
+                            <p><b>Privacy Policy <br> Terms of Use <br> Accessibility </b></p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </footer>
+
+        </div> <!-- end footer fixing div 3 -->
+    </div> <!-- end footer fixing div 1 -->
+
+    
+    
+</body>
+</html>

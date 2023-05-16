@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<%- include('../partials/head')%>
+	<!--Getting the crime categories-->
+	<script src="js/myCitiesScript.js"></script>
+	<!-- <script src="js/myCitiesScript.js"></script> -->
+</head>
+
+<body>
+	<div class="table-container"> <!-- footer fixing div 1 -->
+		<div class="table-block footer-push"> <!-- footer fixing div 2 -->
+
+			<!-- Title & Navbar -->
+			<header>
+				<%- include('../partials/header')%>
+				<script>
+					var isLoggedIn = <%=isLoggedIn%>
+				if (isLoggedIn == true) {
+					
+					} else {
+						alert("Please login")
+					}
+				</script>
+			</header>
+
+			<!-- Page Content -->
+			<main>
+				<div class="container">
+					<!-- Description -->
+					<div class="image mycities">
+						<div class="row"> <br> <h5>Saved Locations</h5> </div>
+						<div class="row">
+							<p class="four offset-by-four columns">Here you can find the latest crime data for your selected cities.</p>
+						</div>
+					</div>
+
+					<!-- Section Title -->
+					<div class="row">
+						<div class="four columns divider"></div>
+						<div class="four columns section-title"> <h4>My Cities</h4> </div>
+						<div class="four columns divider"></div>
+					</div>
+
+					<!-- Table -->
+					<br>
+					<table class="u-full-width">
+						<thead>
+							<tr>
+								<th>City</th>
+								<th>Longitude</th>
+								<th>Latitude</th>
+								<th>No. of Crimes</th>
+							</tr>
+						</thead>
+						<tbody id="citiesTable">
+							<!-- for each city in the database add it to the table -->
+							<% cities.forEach(function(city){ %>
+								<tr id="<%=city.CityName %>">
+									<td class="city"> <%=city.CityName %> </td>
+									<td class="longitude"> <%=city.Longitude %> </td>
+									<td class="latitude"> <%= city.Latitude %> </td>
+									<td class="crimeNo"></td>
+								</tr>
+								<% }); %>
+						</tbody>
+					</table>
+
+					<!-- Add New -->
+					<form action="/addCity" method="POST">
+						<div class="row">
+							<div class="three columns form-elements">
+								<label for="cityname">Name of City</label>
+								<input class="u-full-width" type="text" step="any" placeholder="My City" name="cityName">
+							</div>
+							<div class="three columns form-elements">
+								<label for="longitude">Longitude</label>
+								<input class="u-full-width" type="number" step="any" placeholder="12.345678" name="longitude">
+							</div>
+							<div class="three columns form-elements">
+								<label for="latitude">Latitude</label>
+								<input class="u-full-width" type="number" step="any" placeholder="12.345678" name="latitude">
+							</div>
+							<div class="three columns form-elements-button inline-button mycities">
+								<input class="button-primary" id="addNew" type="submit" value="Add New">
+							</div>
+						</div>
+					</form>
+				</div>
+			</main>
+
+		</div> <!-- end footer fixing div 2 -->
+
+		<div class="table-block"> <!-- footer fixing div 3 -->
+			<!-- Footer-->
+			<footer>
+				<%- include('../partials/footer')%>
+			</footer>
+		</div> <!-- end footer fixing div 3 -->
+	</div> <!-- end footer fixing div 1 -->
+</body>
+</html>

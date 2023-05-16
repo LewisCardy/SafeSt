@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head')%>
+	<script src="js/categories.js"></script>
+</head>
+<body>
+	
+    <div class="table-container"> <!-- footer fixing div 1 -->
+        <div class="table-block footer-push"> <!-- footer fixing div 2 -->
+
+            <!-- Title & Navbar -->
+            
+            <header>
+				<%- include('../partials/header')%>
+			</header>
+
+            <!-- Page Content -->
+
+            <main>
+					<div class="container">
+							<!-- Description -->
+							<div class="image ratings">
+								<div class="row"> <br> <h5>Top 10 Largest Cities</h5></div>
+								<div class="row">
+										<p class="four offset-by-four columns">Select an incident category for the latest figures for the past month in 10 of the largest cities in the UK.</p>
+								</div>
+							</div>
+
+							<!-- Section Title -->
+								<div class="row">
+								<div class="five columns divider"></div>
+								<div class="two columns section-title"><h4>Ratings</h4></div>
+								<div class="five columns divider"></div>
+							</div>
+
+							<!-- Form -->
+							<div class="row">
+										
+								<div class="six offset-by-three columns">
+									<label for="category">Type of incident</label>
+									<select class="u-full-width" id="category"></select>
+								</div>
+								<div class="row">
+									<div class="twelve columns form-elements-button" style="text-align: center;">
+										<input class="button-primary" id="updateTable" type="submit" value="Update Table">
+									</div>
+								</div>
+							</div>
+
+							<br>
+							<br>
+
+
+							<!-- Table -->
+							<table class="u-full-width">
+								<thead>
+									<tr>
+									<th>City</th>
+									<th>Longitude</th>
+									<th>Latitude</th>
+									<th>No. of Crimes</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr id="london">
+										<td class="city">London</td>
+										<td class="Longitude">0.00000</td>
+										<td class="Latitude">0.00000</td>
+										<td class="number">123</td>
+									</tr>
+
+									<tr id="manchester">
+										<td class="city">Manchester</td>
+										<td class="Longitude">0.00000</td>
+										<td class="Latitude">0.00000</td>
+										<td class="number">123</td>
+									</tr>
+
+									<tr id="birmingham">
+										<td class="city">Birmingham</td>
+										<td class="Longitude">0.00000</td>
+										<td class="Latitude">0.00000</td>
+										<td class="number">123</td>
+									</tr>
+
+									<tr id="leeds">
+										<td class="city">Leeds</td>
+										<td class="Longitude">0.00000</td>
+										<td class="Latitude">0.00000</td>
+										<td class="number">123</td>
+									</tr>
+
+									<tr id="southampton">
+										<td class="city">Southampton</td>
+										<td class="Longitude">0.00000</td>
+										<td class="Latitude">0.00000</td>
+										<td class="number">123</td>
+									</tr>
+
+									<tr id="liverpool">
+										<td class="city">Liverpool</td>
+										<td class="Longitude">0.00000</td>
+										<td class="Latitude">0.00000</td>
+										<td class="number">123</td>
+									</tr>
+
+									<tr id="newcastle">
+										<td class="city">Newcastle</td>
+										<td class="Longitude">0.00000</td>
+										<td class="Latitude">0.00000</td>
+										<td class="number">123</td>
+									</tr>
+
+									<tr id="sheffield">
+										<td class="city">Sheffield</td>
+										<td class="Longitude">0.00000</td>
+										<td class="Latitude">0.00000</td>
+										<td class="number">123</td>
+									</tr>
+
+									<tr id="belfast">
+										<td class="city">Belfast</td>
+										<td class="Longitude">0.00000</td>
+										<td class="Latitude">0.00000</td>
+										<td class="number">123</td>
+									</tr>
+
+									<tr id="brighton">
+										<td class="city">Brighton</td>
+										<td class="Longitude">0.00000</td>
+										<td class="Latitude">0.00000</td>
+										<td class="number">123</td>
+									</tr>
+									
+								</tbody>
+							</table>
+                	</div>
+					<h6 style="text-align: center;">Note: Crime data for Manchester and Birmingham are for British Transport Police Only</h6>
+					<script src="js/ratingsScript.js"></script>
+            </main>
+
+        </div> <!-- end footer fixing div 2 -->
+
+        <div class="table-block"> <!-- footer fixing div 3 -->
+
+            <!-- Footer-->
+
+            <footer>
+				<%- include('../partials/footer')%>
+            </footer>
+
+        </div> <!-- end footer fixing div 3 -->
+    </div> <!-- end footer fixing div 1 -->
+
+</body>
+</html>

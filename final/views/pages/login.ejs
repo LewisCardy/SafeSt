@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head')%>
+
+    <script>
+        if (<%= error %> == true) {
+            alert("Please Login")
+        }
+    </script>
+</head>
+
+<body>
+    <div class="table-container"> <!-- footer fixing div 1 -->
+        <div class="table-block footer-push"> <!-- footer fixing div 2 -->
+
+            <!-- Title & Navbar -->
+            <header>
+                <%- include('../partials/header')%>
+            </header>
+
+            <!-- Page Content -->
+            <main>
+                <div class="container">
+
+                    <!-- Description -->
+                    <div class="image login">
+                        <div class="row"> <br> <h5>Login or Register</h5> </div>
+                        <div class="row">
+                            <p class="six offset-by-three columns">Take full benefit of Safe/St and register an account.  Once logged in, you can save your searches and share your findings with friends and family.</p>
+                        </div>
+                    </div>
+
+                    <!-- Login Section Title -->
+                    <div class="row">
+                        <div class="five columns divider"></div>
+                        <section class="two columns section-title"> <h4>Login</h4> </section>
+                        <div class="five columns divider"></div>
+                    </div>
+
+                    <!-- Login -->
+                    <form action="/login" method="POST">
+                        <div class="row form-elements">
+                            <div class="six columns offset-by-three">
+                                <label for="emailLogin">Email address</label>
+                                <input class="u-full-width" type="email" placeholder="example@mail.com" name="emailInput">
+                            </div>
+                        </div>
+                        <div class="row form-elements">
+                            <div class="six columns offset-by-three">
+                                <label for="passwordLogin">Password</label>
+                                <input class="u-full-width" type="password" placeholder="••••••••" name="passwordInput">
+                            </div>
+                        </div>
+                        <div class="row form-elements-button">
+                            <div class="six columns offset-by-three" style="text-align: center;">
+                                <input class="button-primary" type="submit" value="Login">
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Registration Section Title -->
+                    <div class="row" style="margin-top: 60px;">
+                        <div class="five columns divider"></div>
+                        <section class="two columns" style="text-align: center; margin-top: -1.6rem;">
+                            <h4>Register</h4>
+                        </section>
+                        <div class="five columns divider"></div>
+                    </div>
+
+                    <!-- New user registration -->
+                    <form action="/createAccount" method="POST">
+                        <div class="row form-elements">
+                            <div class="six columns offset-by-three">
+                                <label for="emailRegister">Email address</label>
+                                <input class="u-full-width" type="email" placeholder="example@mail.com"
+                                    name="emailRegInput">
+                            </div>
+                        </div>
+                        <div class="row form-elements">
+                            <div class="six columns offset-by-three">
+                                <label for="passwordRegister">Password</label>
+                                <input class="u-full-width" type="password" placeholder="••••••••"
+                                    name="passwordRegInput">
+                            </div>
+                        </div>
+                        <div class="row form-elements-button">
+                            <div class="six columns offset-by-three" style="text-align: center;">
+                                <input class="button-primary" type="submit" value="New user registration">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div> <!-- end footer fixing div 2 -->
+
+        <div class="table-block"> <!-- footer fixing div 3 -->
+            <!-- Footer-->
+            <footer>
+                <%- include('../partials/footer')%>
+            </footer>
+        </div> <!-- end footer fixing div 3 -->
+    </div> <!-- end footer fixing div 1 -->
+</body>
+</html>

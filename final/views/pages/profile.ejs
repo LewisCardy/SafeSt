@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head')%>
+</head>
+
+<body>
+    <div class="table-container"> <!-- footer fixing div 1 -->
+        <div class="table-block footer-push"> <!-- footer fixing div 2 -->
+
+            <!-- Title & Navbar -->
+            <header>
+                <!-- if the user hasnt logged on then the page is inaccessable -->
+                <%- include('../partials/header')%>
+                <script>
+                    var isLoggedIn = <%=isLoggedIn%>
+                    console.log(isLoggedIn)
+				    if (isLoggedIn == true) {
+                        
+					} else {
+						alert("Please login")
+					}
+                </script>
+            </header>
+
+            <!-- Page Content -->
+            <main>
+                <div class="container">
+
+                    <!-- Description -->
+                    <div class="image profile">
+                        <div class="row"> <br> <h5>My User Account Profile</h5> </div>
+                        <div class="row">
+                            <p class="six offset-by-three columns">Control your interaction with Safe/St</p>
+                        </div>
+                    </div>
+
+                    <!-- Profile Section Title -->
+                    <div class="row">
+                        <div class="five columns divider"></div>
+                        <section class="two columns section-title"> <h4>Profile</h4> </section>
+                        <div class="five columns divider"></div>
+                    </div>
+
+                    <!-- Profile -->
+                    <form action="/profileUpdate" method="POST">
+                        <div class="row form-elements">
+                            <div class="four columns form-elements">
+                                <label for="currentEmail">Current email address:</label>
+                                <span id="currentEmail"> <%=email%> </span> <!--gets the email from the current session -->
+                            </div>
+                            <div class="four columns form-elements">
+                                <h6 style="text-align: center;">Note: Changing account details will clear saved cities</h6>
+                            </div>
+                        </div>
+                        <div class="row form-elements">
+                            <div class="four columns form-elements">
+                                <label for="newPassword">New password</label>
+                                <input class="u-full-width" type="password" placeholder="••••••••" name="passwordInput">
+                            </div>
+                            <div class="four columns form-elements">
+                                <label for="newEmail">New email address</label>
+                                <input class="u-full-width" type="email" placeholder="example@mail.com" name="emailInput">
+                            </div>
+                        </div>
+
+                        <!-- Cancel and Save buttons -->
+                        <div class="row form-elements-button">
+                            <div class="twelve columns form-elements" style="text-align: center;">
+                                <input class="button-primary" type="submit" value="Save">
+                            </div>
+                        </div>
+                    </form>
+                    <form action="/home">
+                        <div class="twelve columns form-elements" style="text-align: center;">
+                            <input class="button-primary" type="submit" value="Cancel">
+                        </div>
+                    </form>
+
+                </div>
+            </main>
+
+        </div> <!-- end footer fixing div 2 -->
+
+        <div class="table-block">
+            <!-- footer fixing div 3 -->
+            <!-- Footer-->
+            <footer>
+                <%- include('../partials/footer')%>
+            </footer>
+        </div> <!-- end footer fixing div 3 -->
+    </div> <!-- end footer fixing div 1 -->
+</body>
+
+</html>

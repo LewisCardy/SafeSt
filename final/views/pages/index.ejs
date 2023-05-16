@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head')%>
+
+    <!-- Leaflet Map API-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    
+    <!--Getting the crime categories-->
+    <script src="js/categories.js"></script>
+
+    <!-- Heatmap javascript -->
+    <script src="js/leaflet-heat.js"></script>
+</head>
+<body>
+    <div class="table-container"> <!-- footer fixing div 1 -->
+        <div class="table-block footer-push"> <!-- footer fixing div 2 -->
+
+            <!-- Title & Navbar -->
+            <header>
+                <%- include('../partials/header')%>
+            </header>
+
+            <!-- Page Content -->
+            <main>
+                <div class="container">
+
+                    <!-- Welcome and Description -->
+                    <div class="image">
+                        <div class="row"> <br> <h5>Welcome to Safe/St!</h5></div>
+                        <div class="row">
+                            <p class="five columns">With this map tool, find crime statistics for England, Wales and Northern Ireland.  All statistical data from data.police.uk.  For historical data, choose the type of incident and select a date on or before when the Police API was last updated.</p>
+                        </div>
+                    </div>
+
+                    <!-- Section Title -->
+                    <div class="row">
+                        <div class="five columns divider"></div>
+                        <div class="two columns section-title"><h4>Search</h4></div>
+                        <div class="five columns divider"></div>
+                    </div>
+
+                    <!-- Form -->
+                    <div class="row">
+                        <div class="four columns form-elements">
+                            <label for="longitude">Longitude</label>
+                            <input class="u-full-width" type="number" placeholder="12.345678" id="longitude">
+                        </div>
+                        <div class="four columns form-elements">
+                            <label for="latitude">Latitude</label>
+                            <input class="u-full-width" type="number" placeholder="12.345678" id="latitude">
+                        </div>
+                        <div class="four columns form-elements inline-button" >
+                            <input class="button" id="getLocation" type="submit" value="Get Coordinates">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="four columns form-elements">
+                            <!-- <label for="date">Date <span id="lastUpdate"> Last updated:</span></label> -->
+                            <label for="date">Date</label>
+                            <input class="u-full-width" type="date" id="date">
+                            <!-- <span id="lastUpdate">Last updated:</span> -->
+                            <span id="lastUpdate"></span>
+                        </div>
+                        <div class="eight columns form-elements">
+                            <label for="category">Type of incident</label>
+                            <select class="u-full-width" id="category"></select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="twelve columns form-elements-button" style="text-align: center;">
+                            <input class="button-primary" id="search" type="submit" value="Search">
+                        </div>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="row" style="margin-top: 40px;">
+                        <div id="mapid"></div>
+                    </div>
+                
+                </div>  <!-- end of "container" div -->
+                <script src="js/indexScript.js"></script>
+            </main>
+
+        </div> <!-- end footer fixing div 2 -->
+
+        <div class="table-block"> <!-- footer fixing div 3 -->
+            <!-- Footer-->
+            <footer>
+                <%- include('../partials/footer')%>
+            </footer>
+        </div> <!-- end footer fixing div 3 -->
+    </div> <!-- end footer fixing div 1 -->
+</body>
+</html>
